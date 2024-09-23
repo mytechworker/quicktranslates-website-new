@@ -12,6 +12,8 @@
     "format": "npm run pretty && npm run lint"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@types/react-dom": "18.2.7",
     "dotenv-cli": "^7.2.1",
     "next": "13.4.12",

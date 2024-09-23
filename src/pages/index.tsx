@@ -13,21 +13,16 @@ import Footer from "@/components/footer/footer";
 import Chevron from "@/images/chevron.svg";
 import Arrow_Black from "@/images/arrow-black.svg";
 import Arrow_White from "@/images/arrow-white.svg";
-import LEFT_ARROW_ICON from "@/images/left-arrow.svg";
-import RIGHT_ARROW_ICON from "@/images/right-arrow.svg";
 
 import { HomePage as Content } from "@/content";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
-  // const [animationDirection, setAnimationDirection] = useState("none");
 
   const handleNext = () => {
     console.log("Next clicked");
@@ -178,34 +173,7 @@ export default function Home() {
         />
       </section>
 
-      <div className="separator"></div>
-     
-      {/* <section className={`${styles["aboutusSection"]} grid-layout container-global-bg-color`}>
-        <p className={`tag tag-blue paragraph-3-bold`}>{Content.aboutus.tag}</p>
-        <h2 className="h2-bold text-center"
-            dangerouslySetInnerHTML={{ __html: Content.aboutus.heading }}></h2>
-        <ul className={`mt-44 ${styles["steps-container"]}`}>
-          {Content.aboutus.steps.map((step, index) => {
-            return (
-              <li className={`${styles["step-container"]} flex-col-center-start`}
-                key={`${step.name}-${index}`}>
-                <Image
-                  src={step.icon}
-                  alt="user-profile"
-                  className={styles["step-icon"]}
-                />
-                <p className={`${styles["step-count-desktop"]} h4-bold flex-center`}></p>
-                <h4 className={`h3-bold`}>{step.name}</h4>
-                <p className={`paragraph-regular`}>{step.owner}</p>
-                <p className={`${styles["step-description"]} paragraph-regular`}>
-                  {step.description}
-                </p>
-              </li>
-            );
-          })}
-        </ul>
-      </section> */}
-     
+      <div className="separator"></div>     
 
       <section className={`${styles["aboutusSection"]} grid-layout container-global-bg-color`}>
         <p className={`tag tag-blue paragraph-3-bold`}>
@@ -215,63 +183,96 @@ export default function Home() {
 
         <div className={styles["carousel-container"]}>
           <Swiper
-              // slidesPerView={3}
+              initialSlide={1}
               centeredSlides={true}
-              spaceBetween={30}
-              navigation={true}
-              // autoplay={{
-              //   delay: 3000, // Time in ms between slide transitions
-              //   disableOnInteraction: false, // Autoplay will not be disabled after user interactions
-              // }}
+              spaceBetween={50}
+              loop={true}
+              navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              }}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
               modules={[Autoplay, Navigation]}
               className="mySwiper"
               onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
               breakpoints={{
               // Responsive settings
-              640: {
-                slidesPerView: 1, // Show 1 slide on mobile
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 2, // Show 2 slides on tablet
-                spaceBetween: 30,
-              },
-              1024: {
-                slidesPerView: 3, // Show 3 slides on desktop
-              },
+              1280: { slidesPerView: 3 },
+              768: { slidesPerView: 2, spaceBetween: 40 },
+              640: { slidesPerView: 1, spaceBetween: 20 },
             }}
           >
-            {Content.aboutus.steps.map((step, index) => (
-              <SwiperSlide key={index}>
+            {Content.aboutus.steps.map((step, index) => {
+            // Determine if slide should be clear, blurred (prev/next)
+            const isPrev = index === (activeIndex === 0 ? Content.aboutus.steps.length - 1 : activeIndex - 1);
+            const isNext = index === (activeIndex === Content.aboutus.steps.length - 1 ? 0 : activeIndex + 1);
+            const isActive = index === activeIndex;
+
+            // Assign classes dynamically
+            const slideClass = isActive
+              ? styles.clear
+              : isPrev || isNext
+              ? styles.blurred
+              : '';
+
+            return (
+              <SwiperSlide key={index} className={slideClass} style={{display: "flex", alignItems: "center"}}>
                 <ul className={`mt-44 ${styles["steps-container"]}`}>
                   <li className={`${styles["step-container"]} flex-col-center-start`}>
-                    <Image
-                      src={step.icon}
-                      alt="user-profile"
-                      className={styles["step-icon"]}
-                    />
+                    <Image src={step.icon} alt="user-profile" className={styles["step-icon"]} />
                     <h4 className={`h3-bold`}>{step.name}</h4>
-                    <p className={`paragraph-regular`}>{step.owner}</p>
+                    <h6 className={`paragraph-regular`}>{step.owner}</h6>
                     <p className={`${styles["step-description"]} paragraph-regular`}>{step.description}</p>
                   </li>
                 </ul>
               </SwiperSlide>
-            ))}
+            );
+          })}
           </Swiper>
 
-          {/* Navigation Buttons */}
-          {/* <button className={styles["prev-button"]} onClick={handlePrev}>
-            <Image
-              alt="Hero"
-              src={LEFT_ARROW_ICON}
-            />
+          <button 
+            className="swiper-button-prev" 
+            style={{ 
+              backgroundColor: '#5E85ED', 
+              color: '#FBFCFD', 
+              padding: '8px', 
+              border: '4px solid #BED0FF', 
+              borderRadius: '16px', 
+              cursor: 'pointer',
+              position: 'absolute',
+              bottom: '6%', 
+              transform: 'translateY(-50%)',
+              zIndex: 1,
+              outline: 'none',
+              right: '51%'
+            }}> 
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: '24px', height: '24px' }}>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5l-7 7 7 7" />
+            </svg>
           </button>
-          <button className={styles["next-button"]} onClick={handleNext}>
-            <Image
-              alt="Hero"
-              src={RIGHT_ARROW_ICON}
-            />
-          </button> */}
+          <button 
+            className="swiper-button-next" 
+            style={{ 
+              backgroundColor: '#5E85ED', 
+              color: '#FBFCFD', 
+              padding: '8px', 
+              border: '4px solid #BED0FF', 
+              borderRadius: '16px', 
+              cursor: 'pointer',
+              position: 'absolute',
+              bottom: '6%', 
+              transform: 'translateY(-50%)',
+              zIndex: 1,
+              outline: 'none',
+              left: '51%'
+            }}>  
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: '24px', height: '24px' }}>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </section>
 

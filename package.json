@@ -1,0 +1,45 @@
+{
+  "name": "quicktranslates",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "dotenv -e .env.local next dev",
+    "build:staging": "dotenv -e .env.local next build",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pretty": "prettier --write \"./**/*.*\"",
+    "format": "npm run pretty && npm run lint"
+  },
+  "dependencies": {
+    "@types/react-dom": "18.2.7",
+    "dotenv-cli": "^7.2.1",
+    "next": "13.4.12",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.14"
+  },
+  "devDependencies": {
+    "@types/node": "20.5.0",
+    "@types/react": "18.2.20",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
+    "prettier": "^2.8.3",
+    "sass": "^1.69.7",
+    "typescript": "5.1.6"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

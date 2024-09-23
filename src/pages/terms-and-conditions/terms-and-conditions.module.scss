@@ -1,0 +1,22 @@
+.logo-container {
+  color: black;
+  grid-area: logo;
+  display: flex;
+  grid-area: logo;
+  align-items: center;
+  text-decoration: none;
+  justify-content: flex-start;
+}
+
+.company-name {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+}
+
+.privacy-policy-container {
+  font-family: Inter, sans-serif;
+  h1 {
+    margin-left: -18px;
+  }
+}

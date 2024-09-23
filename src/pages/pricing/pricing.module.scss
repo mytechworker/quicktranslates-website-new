@@ -1,0 +1,103 @@
+.pricing-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  li {
+    list-style: none;
+  }
+}
+
+.pricing-list {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  padding-bottom: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list-item {
+  flex: 1 1 200px;
+  padding: 24px 30px 42px;
+  border: 2px solid #00000030;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  >h3 {
+    margin: 0 auto;
+  }
+
+  >a {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  ol {
+    flex: 1;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    >li {
+      white-space: nowrap;
+    }
+  }
+}
+
+.tier-icon {
+  width: 90px;
+  height: 90px;
+  display: block;
+  margin: 0 auto 30px;
+}
+
+.pricing {
+  padding: 12px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--blue);
+  background-color: var(--cream);
+  border-radius: 10px;
+}
+
+.pricing-description {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.list-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.competitor-price {
+  font-size: 14px;
+  font-weight: 200;
+  max-width: 200px;
+  line-height: 18px;
+  font-style: italic;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 991px) {
+  .pricing-list {
+    row-gap: 30px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .list-item {
+    width: 80%;
+    max-width: 80%;
+  }
+}

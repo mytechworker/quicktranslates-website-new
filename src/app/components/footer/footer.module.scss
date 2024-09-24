@@ -111,8 +111,8 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
       "logo logo logo logo logo logo logo logo logo logo logo logo"
-      "company company company company pricing pricing help help help help help help";
-    padding: 40px 15px 0;
+      "company company company company pricing pricing pricing pricing help help help help";
+    padding: 40px 35px 0;
   }
 
   #footer .logo-container {
@@ -131,6 +131,10 @@
   #footer .newsletter-form input {
     margin-right: 0;
   }
+
+  #footer .copyrightSection {
+    padding: 24px 35px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -141,7 +145,7 @@
       "logo logo logo logo"
       "company company help help"
       "pricing pricing pricing pricing";
-    padding: 40px 0 0;
+    padding: 40px 15px 0;
   }
 
   #footer .newsletter {
@@ -157,5 +161,6 @@
   #footer .copyrightSection {
     flex-direction: column-reverse;
     gap: 20px;
+    padding: 24px 0;
   }
 }

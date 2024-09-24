@@ -275,8 +275,6 @@ export default function Home() {
           </button>
         </div>
       </section>
-
-      <div className="separator"></div>
       
       <Footer />
     </>

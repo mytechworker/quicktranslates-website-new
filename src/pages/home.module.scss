@@ -53,8 +53,8 @@
   }
 
   #hero .hero-image {
-    height: 270px;
-    position: relative;
+    width: 50%;
+    // position: relative;
   }
 }
 
@@ -74,21 +74,25 @@
 
   #hero .right {
     margin-bottom: 36px;
-    justify-content: center;
+    // justify-content: center;
   }
 
   #hero .hero-image {
-    width: auto;
-    height: 350px;
+    width: 100%;
+    height: auto;
+    position: relative;
   }
 }
 
 @media screen and (max-width: 767px) {
   #hero .hero-image {
+    margin-bottom: 0px;
+  }
+
+  #hero .signup-today-hero-image {
     width: 100%;
-    height: 100%;
-    max-width: 390px;
-    margin-bottom: 30px;
+    height: auto;
+    margin-top: 50px;
   }
 }
 
@@ -293,7 +297,13 @@
     padding: 0;
   }
 
-  #transcriptionProcess .language-img,
+  #transcriptionProcess .language-img {
+    position: unset;
+    transform: unset;
+    width: 100%;
+    height: auto;
+  }
+
   #transcriptionProcess .spanish-img,
   #transcriptionProcess .italian-img,
   #transcriptionProcess .german-img,
@@ -303,8 +313,22 @@
   #transcriptionProcess .french-img {
     position: unset;
     transform: unset;
-    width: 100%;
+    width: 50%;
     height: auto;
+  }
+
+  #transcriptionProcess .language-img:hover{
+    transform: translate(0%, 0%) scale(1.2);
+  }
+
+  #transcriptionProcess .spanish-img:hover,
+  #transcriptionProcess .italian-img:hover,
+  #transcriptionProcess .german-img:hover,
+  #transcriptionProcess .portuguese-img:hover,
+  #transcriptionProcess .japanese-img:hover,
+  #transcriptionProcess .korean-img:hover,
+  #transcriptionProcess .french-img:hover {
+    transform: translate(0%, 0%) scale(1.2);
   }
 
   #transcriptionProcess h2 {
@@ -330,7 +354,7 @@
 }
 
 .pricing-section .video-audio-img {
-  width: 100%;
+  width: 75%;
   height: auto;
 }
 
@@ -508,11 +532,13 @@
 
 @media screen and (max-width: 767px) {
   .pricing-section {
-    padding-top: 40px;
+    padding-top: 0px;
+    padding-bottom: 24px;
   }
 
   .pricing-section h2 {
     text-align: center;
+    margin-bottom: 30px;
   }
 
   .pricing-section .price-card {
@@ -549,6 +575,11 @@
     display: block;
     margin-bottom: 16px;
   }
+
+  .pricing-section .video-audio-img {
+    width: 100%;
+    height: auto;
+  }
 }
 /*#endregion Pricing*/
 
@@ -569,7 +600,7 @@
 }
 
 .featureMediaSection .captions-img {
-  width: 100%;
+  width: 75%;
   height: auto;
 }
 
@@ -622,6 +653,21 @@
     max-width: 400px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .featureMediaSection {
+    padding-bottom: 24px;
+  }
+
+  .featureMediaSection h2 {
+    margin-bottom: 30px;
+  }
+
+  .featureMediaSection .captions-img {
+    width: 100%;
+    height: auto;
+  }
+}
 /*#endregion Accuracy Feature-Media*/
 
 // Record your own voice section
@@ -636,8 +682,15 @@
 }
 
 .recordYourOwnVoiceSection .record-img {
-  width: 100%;
+  width: 75%;
   height: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .recordYourOwnVoiceSection .record-img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 // About us section

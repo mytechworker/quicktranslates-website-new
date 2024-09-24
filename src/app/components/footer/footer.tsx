@@ -51,9 +51,9 @@ export default function Footer() {
             {Content.pricing.links.map((item, index) => {
               return (
                 <li key={`${item.title}_${index}`}>
-                  <Link href={item.link} className={styles.link}>
+                  {/* <Link href={item.link} className={styles.link}>
                     {item.title}
-                  </Link>
+                  </Link> */}
                 </li>
               );
             })}

@@ -292,11 +292,12 @@
 
   .container-global,
   .container-global-bg-color {
-    max-width: calc(100% - 30px);
+    max-width: calc(100% - 0px);
   }
 
   .container-global-bg-color {
     padding: 24px 15px;
+    margin: 0;
   }
 
   .container-global {

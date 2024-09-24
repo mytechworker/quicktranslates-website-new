@@ -153,7 +153,7 @@
 
   .mobile-links-container {
     padding: 0;
-    width: 100vw;
+    width: 98vw;
     display: block;
     position: fixed;
     top: var(--nav-height);
@@ -180,10 +180,14 @@
 
 @media screen and (max-width: 767px) {
   #nav {
-    padding: 0;
+    padding: 0 15px;
   }
 
   #nav .separator {
     transform: translateX(-15px);
+  }
+
+  .mobile-links-container {
+    width: 92.5vw;
   }
 }

@@ -71,12 +71,12 @@ const Nav = () => {
     if (isMobileNavOpen) {
       document.body.style.overflow = "hidden";
       document.body.style.backgroundImage = `url(${BG_IMG.src})`;
-      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundSize = "100%";
       document.body.style.backgroundPosition = "top center";
     } else {
       document.body.style.overflow = "auto";
       document.body.style.backgroundImage = `url(${BG_IMG.src})`;
-      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundSize = "100%";
       document.body.style.backgroundPosition = "top center";
     }
   });

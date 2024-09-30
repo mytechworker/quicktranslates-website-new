@@ -1,0 +1,166 @@
+#footer {
+  // box-shadow: 0px 0px 100px 0 #1312350F; 
+}
+
+#footer>div {
+  padding: 42px 0;
+  grid-template-areas: "logo logo logo logo logo logo logo company company pricing pricing help help";
+}
+
+#footer .logo {
+  grid-area: logo;
+  margin-bottom: 18px;
+}
+
+#footer .logo-container {
+  color: black;
+  margin-bottom: 18px;
+}
+
+#footer .logo-container h4 {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #241F32;
+}
+
+#footer .logo p {
+  color: #65626D;
+}
+
+#footer .logo-container .mb0 {
+  margin-bottom: 0;
+}
+
+#footer .company {
+  grid-area: company;
+}
+
+#footer .company h4,
+#footer .pricing h4,
+#footer .help h4 {
+  color: #5E85ED;
+  font-size: 16px;
+  line-height: 19.36px;
+  font-weight: 500;
+}
+
+#footer .link {
+  font-size: 16px;
+  line-height: 19.36px;
+  font-weight: 500;
+  color: #241F32;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+#footer .link:hover {
+  color: #5E85ED;
+}
+
+#footer .pricing {
+  grid-area: pricing;
+}
+
+#footer .help {
+  grid-area: help;
+}
+
+#footer .newsletter {
+  grid-area: newsletter;
+}
+
+#footer .newsletter-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#footer .newsletter-form input {
+  width: 100%;
+  margin-right: 8px;
+}
+
+#footer .copyrightSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+}
+
+#footer .copyright {
+  display: flex;
+  align-items: center;
+}
+
+#footer .socialIcons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+#footer .copyright h4 {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  #footer>div {
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "logo logo logo logo logo logo logo logo logo logo logo logo"
+      "company company company company pricing pricing pricing pricing help help help help";
+    padding: 40px 35px 0;
+  }
+
+  #footer .logo-container {
+    margin-bottom: 12px;
+  }
+
+  #footer .newsletter-form {
+    gap: 12px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #footer .newsletter-form input {
+    margin-right: 0;
+  }
+
+  #footer .copyrightSection {
+    padding: 24px 35px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #footer>div {
+    grid-template-rows: auto auto auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "logo logo logo logo"
+      "company company help help"
+      "pricing pricing pricing pricing";
+    padding: 40px 15px 0;
+  }
+
+  #footer .newsletter {
+    margin-top: 24px;
+  }
+
+  #footer .newsletter-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  #footer .copyrightSection {
+    flex-direction: column-reverse;
+    gap: 20px;
+    padding: 24px 0;
+  }
+}

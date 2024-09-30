@@ -1,0 +1,125 @@
+:root {
+  --nav-height: 84px;
+  --section-separation: 90px;
+
+  --transparent-white: #ffffffaa;
+  --transparent-black: #00000022;
+
+  --platinum: #e7e6e6;
+  --cultured: #f3f5f7;
+
+  --alice-blue: #e6f0ff;
+  --baby-blue: #5E85ED;
+  --light-steel-blue: #b3d1ff;
+  --light-blue: #99c2ff;
+  --sky-blue: #66a3ff;
+  --dodger-blue: #5E85ED;
+  --blue: #5E85ED;
+  --royal-blue: #0052cc;
+  --dark-cerulean-blue: #5E85ED;
+  --navy-blue: #002966;
+  --dark-blue: #001f4d;
+  --midnight-blue: #001433;
+  --dark-midnight-blue: #000a1a;
+  --dark-black: #241F32;
+  --light-black: #65626D;
+  --pink: #FF83FF;
+  --white: #FBFCFD;
+
+
+  --pale-yellow: #fffbe6;
+  --very-light-yellow: #fff7cc;
+  --cream: #fff3b3;
+  --pastel-yellow: #ffef99;
+  --mustard-yellow: #ffe766;
+  --golden-yellow: #ffdf33;
+  --gold: #ffd700;
+  --ochre: #ccac00;
+  --olive: #998100;
+  --dark-olive: #665600;
+  --olive-drab: #4d4100;
+  --deep-olive: #332b00;
+  --dark-brownish-olive: #1a1600;
+
+  --mobile: 767px;
+  --tablet: 1200px;
+  --section-width: 1370px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+// .content-wrapper {
+// }
+
+.separator {
+  display: block;
+  height: var(--section-separation);
+}
+
+/*#region BREAK POINTS*/
+/*
+  Screen sizes ranges
+  xs: 320px - 576px,
+  sm: 577px - 767px,
+  md: 768px - 991px,
+  lg: 992px - 1200px,
+  xl: 1201px - 1400px,
+  xxl: 1401px and above
+*/
+
+@media screen and (max-width: 1400px) {
+  :root {
+    --section-width: 1170px;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 1200px) {
+  :root {
+    --nav-height: 90px;
+    --section-width: 976px;
+    --section-separation: 60px;
+  }
+
+  .content-wrapper {
+    background-color: palevioletred;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --section-width: 797px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  :root {
+    --section-separation: 42px;
+  }
+
+  .page-wrapper {
+    padding: 0 15px;
+  }
+
+  .content-wrapper {
+    background-color: blue;
+  }
+}
+/*#endregion BREAK POINTS*/
